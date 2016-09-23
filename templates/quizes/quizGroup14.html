@@ -1,0 +1,36 @@
+<div id="quiz6" class="quiz quiz--group1">
+  <table class="quiz--table">
+    <tr>
+    <td class="question"><b>Б1.4. </b>Затраты на повышение квалификации педагогических работников, 
+        включая затраты на суточные и расходы на проживание педагогических работников на время 
+        повышения квалификации, за исключением затрат на приобретение транспортных услуг</td>
+    <td class="data">
+      <table>
+        <tr tr-data-value name="средняя заработная плата за 2014 г. по данным Росстата в РФ" value="32 611"></tr>
+        <tr tr-data-value name="количество рабочих дней из расчета двух недельного 
+            периода повышения квалификации" value="10"></tr>
+        <tr tr-data-value name="количество рабочих дней в месяце" value="21"></tr>
+        <tr tr-data-value name="коэффициент для заочной формы обучения" value="0,1"></tr>
+        <tr tr-data-value name="доля проходящих обучение в заочной форме (экспертно)" value="0,6"></tr>
+        <tr tr-data-value name="продолжительность повышения квалификации, час" value="72"></tr>
+        <tr tr-data-value name="периодичность повышения квалификации для педагогов" value="3"></tr>
+      </table>
+    </td> 
+    
+    <td class="comment">
+        <table>
+            <tr><td colspan="2" style="text-align:center"> $$ \[\table \text"32 611" × (10/21) × (0,1 × 0,6 + (1 - 0,6)) + ;
+                \text"18 655"/{(36 × 4) × 72} × 1/{12,3 × 864 × 3}  \] =$$ </td></tr>
+            <tr><td style="vertical-align: middle;text-align:center;"> $$\text"18 655"/{(36 × 4) × 72} \text"&nbsp;&nbsp;–"$$ </td>
+                <td style="vertical-align: middle;text-align:left; padding-left:0px"> расходы на замещение ППС 
+                    на период повышения квалификации </td></tr>
+            <tr><td style="vertical-align: middle;text-align:center;"> $$ (36 × 4) \text"&nbsp;&nbsp;–"$$ </td>
+                <td style="vertical-align: middle;text-align:left; padding-left:0px"> количество рабочих часов в месяц </td></tr>
+        </table>
+    </td>
+    <td style="padding-top:40px" class="result">
+      <input id="quiz--result" class="control control--disabled" ui-number-mask ng-model="quiz14result" disabled>
+    </td>
+    </tr>
+  </table>
+</div>

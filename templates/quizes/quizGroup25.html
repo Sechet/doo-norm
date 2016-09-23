@@ -1,0 +1,31 @@
+<div class="quiz quiz--group2">
+  <table class="quiz--table">
+    <tr>
+    <td class="question"><b>Б2.5. </b>Затраты на приобретение транспортных услуг, 
+        включая в том числе расходы на организацию подвоза обучающихся к месту учебы 
+        и проезд педагогических работников до места прохождения повышения квалификации и обратно</td>
+    <td class="data">
+      <table>
+         <tr tr-data-value name="проезд в междугородном автобусе, в расчете на 50 км пути 
+            (ЕМИСС, Республика Дагестан)" value="55,93"></tr>
+         <tr tr-data-value name="периодичность, 1 раз в 3 года повышение квалификации ППС" value="3"></tr>
+         <tr tr-data-value name="число учащихся в расчете на 1 педагогического работника 
+            на 2016 г. по «Дорожной карте»" value="12,3"></tr>
+         <tr tr-data-value name="туда и обратно" value="2"></tr>
+         <tr tr-data-value name="дней обучения" value="12"></tr>
+         <tr tr-data-value name="Норма времени в год, п. 7.1.3 Приказ Минобрнауки России от 22.12.2014 
+            <span class='nowrap'>№ 1601</span>" value="800"></tr>
+      </table>
+    </td> 
+    <td class="comment">
+        <table>
+            <tr><td colspan="2" style="text-align:center;padding-top: 10px;">
+                $$ {55,93 × 2 × 12}/{12,3 × 800 × 3} = $$ </td></tr>
+        </table>
+    </td>
+    <td class="result">
+      <input id="quiz--result" class="control control--disabled" ui-number-mask ng-model="quiz25result" disabled>
+    </td>
+    </tr>
+  </table>
+</div>

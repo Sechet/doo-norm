@@ -1,0 +1,84 @@
+<div class="quiz quiz--group2">
+  <table class="quiz--table">
+    <tr>
+    <td class="question"><b>Б2.1. </b>Затраты на коммунальные услуги</td>
+    <td class="data">
+      <table>
+        <tr tr-data-value name="численность учащихся, данные Росстата 2014 года" value="625"></tr>
+        <tr tr-data-value name="дней в году" value="365"></tr>
+        <tr tr-data-value name="общий фонд учебного времени в год" value="1 728"></tr>
+        
+        <tr tr-data-module name="тариф на горячее водоснабжение из ЕМИСС по региону (руб. за куб.м)" value="hotwater"></tr>
+        <tr tr-data-value name="расчетный средний суточный расход горячей воды 
+            на 1 потребителя (куб.м/сутки) по СНиП 2.04.01-85" value="0,008"></tr>
+        <tr tr-data-module name="тариф на холодное водоснабжение из ЕМИСС по региону (руб. за куб.м)" value="water"></tr>
+        <tr tr-data-value name="расчетный средний суточный расход холодной воды на 1 потребителя (куб.м/сутки) 
+            по СНиП 2.04.01-85 (постановление Правительства Москвы от 10.02.2004 
+            <span class='nowrap'>№ 77-ПП</span>)" value="0,012"></tr>
+        <tr tr-data-module name="тариф на водоотведение из ЕМИСС по региону (руб. за куб.м)" value="sewage"></tr>
+        <tr tr-data-module name="тариф на электроэнергию из ЕМИСС по региону (руб. за кВт)" value="electricity"></tr>
+        <tr tr-data-value name="объем потребляемой электрической энергии (кВт), 
+            данные информационно-статистического сборника «Цены и Тарифы в ЖКХ»" value="2551"></tr>
+        <tr tr-data-module name="тариф на теплоэнергию из ЕМИСС  по региону (руб. за Гкал)" value="heat"></tr>
+        <tr tr-data-value name="объем потребляемой тепловой энергии (Гкал) на кв.м площади, 
+            данные информационно-статистического сборника «Цены и Тарифы в ЖКХ»" value="0,061"></tr>
+        <tr tr-data-value name="расчетная площадь помещений (кв.м). согласно СП 118.13330.2012 
+            (Постановление Главного государственного санитарного врача РФ от 26.12.2014 
+            <span class='nowrap'>№ 1521</span>) 
+            и СанПиН 2.4.2.2821-10 (Постановление Главного государственного санитарного 
+            врача РФ от 29.12.2010 <span class='nowrap'>№ 189</span>)" value="5 110"></tr>
+      </table>
+    </td> 
+    <td class="comment">
+        <table>
+            <tr><td colspan="2" style="text-align:center;padding-top: 10px;">
+                $$ \bi\text"( {{hotwaterSum | number}} ) + ( {{waterSum | number}} ) + ( {{sewageSum | number}} )
+                    + ( {{electricitySum | number}} ) + ( {{heatSum | number}} )" = $$ </td></tr>
+            <tr><td style="vertical-align: middle;text-align:right;"> $$ 625/{12,3} \text"&nbsp;&nbsp;–"$$ </td>
+                <td style="vertical-align: middle;text-align:left; padding-left:0px">численность ППС</td></tr>
+            <tr><td style="vertical-align: middle;text-align:right;"> $$ 625/{12,3} × {0,39} \text"&nbsp;&nbsp;–"$$ </td>
+                <td style="vertical-align: middle;text-align:left; padding-left:0px">численность АУП</td></tr>
+                
+            <tr><td colspan="2" style="padding-top: 10px;padding-bottom: 0px;">
+                <b>горячее водоснабжение (куб. м.)</b></td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 0px;">
+                $$ \bi\text"( {{hotwaterSum | number}} )"= {\bi\text"( {{hotwater | number}} )"} × 0,001270 $$ </td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 10px;">
+                $$ 0,001270 = (625 + 625/{12,3} + 625/{12,3 × 0,39}) × {0,008 × 365}/{625 × 1728} $$ </td></tr>
+                
+            <tr><td colspan="2" style="padding-top: 10px;padding-bottom: 0px;">
+                <b>холодное водоснабжение (куб. м.)</b></td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 0px;">
+                $$ \bi\text"( {{waterSum | number}} )"= {\bi\text"( {{water | number}} )"} × 0,001910 $$ </td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 10px;">
+                $$ 0,001910 = (625 + 278/{12,3} + 625/{12,3 × 0,39}) × {0,012 × 365}/{836 × 1728} $$ </td></tr>
+
+            <tr><td colspan="2" style="padding-top: 10px;padding-bottom: 0px;">
+                <b>водоотведение и очистка сточных вод (куб. м.)</b></td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 0px;">
+                $$ \bi\text"( {{sewageSum | number}} )"= {\bi\text"( {{sewage | number}} )"} × 0,003180 $$ </td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 10px;">
+                $$ 0,003180 = 0,001270 + 0,001910 $$ </td></tr>
+
+            <tr><td colspan="2" style="padding-top: 10px;padding-bottom: 0px;">
+                <b>электроснабжение (кВт)</b></td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 0px;">
+                $$ \bi\text"( {{electricitySum | number}} )"= {\bi\text"( {{electricity | number}} )"} × 0,000640 $$ </td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 10px;">
+                $$ 0,000640 = \text"2 551" × {0,9}/{625 × 1 728} $$ </td></tr>
+                
+            <tr><td colspan="2" style="padding-top: 10px;padding-bottom: 0px;">
+                <b>теплоснабжение (Гкал)</b></td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 0px;">
+                $$ \bi\text"( {{heatSum | number}} )"= {\bi\text"( {{heat | number}} )"} × 0,000020 $$ </td></tr>
+            <tr><td colspan="2" style="padding-top: 5px;padding-bottom: 10px;">
+                $$ 0,000020 = \text"0,061 × 5 110" × {0,5}/{625 × 1 728} $$ </td></tr>
+                
+        </table>
+    </td>
+    <td style="padding-top:0px" class="result">
+      <input id="quiz--result" class="control control--disabled" ui-number-mask ng-model="quiz21result" disabled>
+    </td>
+    </tr>
+  </table>
+</div>
