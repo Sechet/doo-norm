@@ -115,7 +115,7 @@ app.controller('ctrl', function($scope) {
     
     $scope.floatRegEx = /^(?:[1-9]\d*|0)?(?:\,\d+)?$/i;
     $scope.intRegEx = /^[1-9]\d*$/i;
-    
+
 
     $scope.$watch('[meanwage]', function(newValues,oldValues) {
         if (!newValues.reduce(andNullORundefined, true)) {
