@@ -127,8 +127,8 @@ app.controller('ctrl', function($scope) {
         var resultValue1 = meanwage * 0.88 * 12 * (1 + 0.302)/(12.3 * 800);
         $scope.quiz11result = !isNullORundefined(resultValue1) ? resultValue1 : null;
         
-        var resultValue2 = meanwage * 12 * (1 + 0.302) * 0.67 * (39/(100 - 39)) * 12.3 * (1/864);
-        $scope.quiz26result = !isNullORundefined(resultValue2) ? resultValue2 : null;;
+        var resultValue2 = meanwage * 12 * (1 + 0.302) * 0.67 * (39/(100 - 39)) * (1/(12.3 * 864));
+        $scope.quiz26result = !isNullORundefined(resultValue2) ? resultValue2 : null;
     });
     
     $scope.$watch('[hotwater]', function(newValues, oldValues) {
